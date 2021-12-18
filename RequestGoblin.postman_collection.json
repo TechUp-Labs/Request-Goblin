@@ -1,0 +1,864 @@
+{
+	"info": {
+		"_postman_id": "f0e16b6f-f536-4d06-bc9b-f3e459366044",
+		"name": "RequestGoblin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Goblin",
+			"item": [
+				{
+					"name": "Generate Goblin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/generate_goblin/20",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"generate_goblin",
+								"20"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employee",
+			"item": [
+				{
+					"name": "Get Employee List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Goblin-Token",
+								"value": "U1IT1639827148Z559258185A795923491",
+								"type": "text"
+							},
+							{
+								"key": "X-Goblin-section-id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/employee/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"employee",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Employee",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Goblin-Token",
+								"value": "U1IT1639827148Z46704427A779270691",
+								"type": "text"
+							},
+							{
+								"key": "X-Goblin-section-id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Zakir",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "24",
+									"description": "Maximum 99 ",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "Male",
+									"type": "text"
+								},
+								{
+									"key": "willing_to_work",
+									"value": "Yes",
+									"type": "text"
+								},
+								{
+									"key": "languages",
+									"value": "SP,FR,EN,HI",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/employee",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Employee",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "X-Goblin-Token",
+								"value": "U1IT1639827148Z751756821A22136957",
+								"type": "text"
+							},
+							{
+								"key": "X-Goblin-section-id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Zakir\",\r\n    \"age\": \"24\",\r\n    \"gender\": \"Male\",\r\n    \"willing_to_work\": \"Yes\",\r\n    \"languages\": \"SP,FR,EN,HI\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/employee/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"employee",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Employee Details By Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Goblin-Token",
+								"value": "U1IT1639827148Z916067068A751120742",
+								"type": "text"
+							},
+							{
+								"key": "X-Goblin-section-id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/employee/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"employee",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Employee",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Goblin-Token",
+								"value": "U1IT1638636477Z245562105A549200859",
+								"type": "text"
+							},
+							{
+								"key": "X-Goblin-section-id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/employee/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"employee",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "a@example.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						},
+						{
+							"key": "remember_me",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Loged In User Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/logout",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Test User",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "hh3@example.com",
+							"type": "text"
+						},
+						{
+							"key": "mobile",
+							"value": "1234567890",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						},
+						{
+							"key": "dob",
+							"value": "1999-06-05",
+							"description": "Not Required",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "Male",
+							"description": "Not Required",
+							"type": "text"
+						},
+						{
+							"key": "lang_code",
+							"value": "EN",
+							"description": "Current Language Code Not Required",
+							"type": "text"
+						},
+						{
+							"key": "profile_img",
+							"description": "Not Required",
+							"type": "file",
+							"src": "/C:/Users/Admin/Desktop/backbanchers logo/Dp.jpg"
+						},
+						{
+							"key": "first_name",
+							"value": "Test ",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "User 3",
+							"type": "text"
+						},
+						{
+							"key": "is_admin",
+							"value": "1",
+							"description": "Not Required Set only while registering Admin",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "role",
+							"value": "Manager",
+							"description": "Not Required Set only while registering Admin",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/new_register",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"new_register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Logged in user profile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Debdeep",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "hh@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "mobile",
+							"value": "55558855588",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						},
+						{
+							"key": "dob",
+							"value": "1996-06-05",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "Male",
+							"type": "text"
+						},
+						{
+							"key": "lang_code",
+							"value": "EN",
+							"type": "text"
+						},
+						{
+							"key": "first_name",
+							"value": "DebDeep",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "S",
+							"type": "text"
+						},
+						{
+							"key": "company_logo",
+							"type": "file",
+							"src": "/E:/freelance/dotlinker/public/img/settings/backup/banner-image.jpg"
+						},
+						{
+							"key": "company_name",
+							"value": "Tech SIngularity",
+							"type": "text"
+						},
+						{
+							"key": "profile_img",
+							"type": "file",
+							"src": "/C:/Users/Admin/Desktop/backbanchers logo/Dp.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/user/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"user",
+						"1"
+					]
+				},
+				"description": "where 1 is my id or logged in user id"
+			},
+			"response": []
+		},
+		{
+			"name": "Update other Users & Admins",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Zakir S12",
+							"description": "Not Required",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "munshiji.zakir1@gmail.com",
+							"description": "Not Required",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "mobile",
+							"value": "7798383119",
+							"description": "Not Required",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"description": "Not Required",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "dob",
+							"value": "1996-06-05",
+							"description": "Not Required",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "gender",
+							"value": "Male",
+							"description": "Not Required",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "lang_code",
+							"value": "FR",
+							"description": "Not Required Current Language Code ",
+							"type": "text"
+						},
+						{
+							"key": "is_admin",
+							"value": "1",
+							"description": "Not Required only Admins can make someone Admin",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "role",
+							"value": "Manager",
+							"description": "Not Required only Admins can make someone Admin",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "first_name",
+							"value": "Zakir",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "last_name",
+							"value": "S",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/user/4",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"user",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Lanuage",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "lang_code",
+							"value": "EN",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/user/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forget Password | Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "munshiji.zakir@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/forget",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"forget"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset New Password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "munshiji.zakir@gmail.com",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "code",
+							"value": "850166",
+							"type": "text"
+						},
+						{
+							"key": "newpass",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/reset",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"reset"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Admins with searches",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{base_url}}/listadmin?query=admin",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"listadmin"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "admin"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User - Only Admin Can Delete The User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/deleteuser/22",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"deleteuser",
+						"22"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Detail By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/getuserdetail/4",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"getuserdetail",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User List with searches",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/userlist?query=debdeep",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"userlist"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "debdeep"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Loggedin Users Password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "old_password",
+							"value": "12345678",
+							"type": "text"
+						},
+						{
+							"key": "new_password",
+							"value": "12345678",
+							"type": "text"
+						},
+						{
+							"key": "cnfrm_password",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/updatepassword",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"updatepassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Profession",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "designation",
+							"value": "Professional",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/user/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000/api",
+			"disabled": true
+		},
+		{
+			"key": "base_url",
+			"value": "https://ns1.techsingularity.com/server45/RequestGoblin/public/api"
+		}
+	]
+}
