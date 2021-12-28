@@ -10,11 +10,11 @@ If you need to send webhooks, take a look at our [laravel-webhook-server](https:
 
 ## Support us
 
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-webhook-client.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-webhook-client)
+[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-webhook-client.jpg?t=1" width="419px" />](https://techuplabs.com/)
 
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
+We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://techuplabs.com/).
 
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://techuplabs.com/partner-us.php). We publish all received postcards on [our virtual postcard wall](https://techuplabs.com/).
 
 ## Installation
 
@@ -327,5 +327,3 @@ We publish all received postcards [on our company website](https://spatie.be/en/
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-
-
