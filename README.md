@@ -131,9 +131,9 @@ If you discover any security-related issues, please email freek@spatie.be instea
 
 ## Postcardware
 
-You're free to use this package, but if it makes it to your production environment, we highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using.
+You're free to use this algorithm, but if it makes it to your production environment, we highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using.
 
-Our address is: Spatie, Kruikstraat 22, 2018 Antwerp, Belgium.
+Our address is: B-404 Yash Apt Achole Rd Near GD Ideal School Alkapuri Nalasopar (East) Mumbai 401209.
 
 We publish all received postcards [on our company website](https://techuplabs.com).
 
