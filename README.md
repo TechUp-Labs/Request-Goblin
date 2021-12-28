@@ -10,7 +10,7 @@ This Algorithm allows you to receive Multiple Request in a Laravel app. It has s
 
 [<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-webhook-client.jpg?t=1" width="419px" />](https://techuplabs.com/)
 
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://techuplabs.com/).
+We invest a lot of resources into creating [best in class open source packages](https://techuplabs.com/). You can support us by [buying one of our paid products](https://techuplabs.com/).
 
 We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://techuplabs.com/partner-us.php). We publish all received postcards on [our virtual postcard wall](https://techuplabs.com/).
 
@@ -127,7 +127,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Security
 
-If you discover any security-related issues, please email freek@spatie.be instead of using the issue tracker.
+If you discover any security-related issues, please email munshiji.zakir@gmail.com instead of using the issue tracker.
 
 ## Postcardware
 
