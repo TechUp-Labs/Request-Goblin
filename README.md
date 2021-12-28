@@ -4,9 +4,7 @@
 
 Request-Goblin is a multiple request handling Library. The way the two apps communicate is with a simple HTTP request.
 
-This package allows you to receive webhooks in a Laravel app. It has support for [verifying signed calls](#verifying-the-signature-of-incoming-webhooks), [storing payloads and processing the payloads](#storing-and-processing-webhooks) in a queued job.
-
-If you need to send webhooks, take a look at our [laravel-webhook-server](https://github.com/spatie/laravel-webhook-server) package.
+This Algorithm allows you to receive Multiple Request in a Laravel app. It has support for [verifying signed calls](#verifying-the-signature-of-incoming-webhooks), [storing payloads and processing the payloads](#storing-and-processing-webhooks) in a queued job.
 
 ## Support us
 
@@ -21,71 +19,35 @@ We highly appreciate you sending us a postcard from your hometown, mentioning wh
 You can install the package via composer:
 
 ```bash
-composer require spatie/laravel-webhook-client
+git clone https://github.com/TechUp-Labs/Request-Goblin.git
 ```
 
-### Configuring the package
+### Install the repository
 
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --provider="Spatie\WebhookClient\WebhookClientServiceProvider" --tag="webhook-client-config"
+php artisan migrate:refresh --seed
 ```
 
-This is the contents of the file that will be published at `config/webhook-client.php`:
+This is the contents of the file that will be published at `app\Http\Controllers\API\GoblinController.php`:
 
 ```php
-return [
-    'configs' => [
-        [
-            /*
-             * This package supports multiple webhook receiving endpoints. If you only have
-             * one endpoint receiving webhooks, you can use 'default'.
-             */
-            'name' => 'default',
-
-            /*
-             * We expect that every webhook call will be signed using a secret. This secret
-             * is used to verify that the payload has not been tampered with.
-             */
-            'signing_secret' => env('WEBHOOK_CLIENT_SECRET'),
-
-            /*
-             * The name of the header containing the signature.
-             */
-            'signature_header_name' => 'Signature',
-
-            /*
-             *  This class will verify that the content of the signature header is valid.
-             *
-             * It should implement \Spatie\WebhookClient\SignatureValidator\SignatureValidator
-             */
-            'signature_validator' => \Spatie\WebhookClient\SignatureValidator\DefaultSignatureValidator::class,
-
-            /*
-             * This class determines if the webhook call should be stored and processed.
-             */
-            'webhook_profile' => \Spatie\WebhookClient\WebhookProfile\ProcessEverythingWebhookProfile::class,
-
-            /*
-             * This class determines the response on a valid webhook call.
-             */
-            'webhook_response' => \Spatie\WebhookClient\WebhookResponse\DefaultRespondsTo::class,
-
-            /*
-             * The classname of the model to be used to store call. The class should be equal
-             * or extend Spatie\WebhookClient\Models\WebhookCall.
-             */
-            'webhook_model' => \Spatie\WebhookClient\Models\WebhookCall::class,
-
-            /*
-             * The class name of the job that will process the webhook request.
-             *
-             * This should be set to a class that extends \Spatie\WebhookClient\Jobs\ProcessWebhookJob.
-             */
-            'process_webhook_job' => '',
-        ],
-    ],
+$hash_code = $request->header('X-Goblin-Token');
+//return $hash_code;
+if(!isset($hash_code)){ 
+    return["status"=>"error","message"=>"Please Pass Valid Goblin token"]; 
+}
+$goblin_check = Goblin::select("hash_code","status","message")->where("user_id","=",Auth::user()->id)->where("hash_code","=",$hash_code)->first();
+if(!isset($goblin_check->hash_code)){ 
+    return["status"=>"error","message"=>"Please Pass Valid Goblin token"]; 
+}
+if(isset($goblin_check->status)){ 
+    $goblin_check->message = json_decode($goblin_check->message);
+    return $goblin_check; 
+}else{ 
+    return 0; 
+}
 ```
 
 In the `signing_secret` key of the config file, you should add a valid webhook secret. This value should be provided by the app that will send you webhooks.
