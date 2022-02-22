@@ -69,20 +69,21 @@ wget https://ns1.techsingularity.com/server45/RequestGoblin/RequestGoblin.postma
 After the `{{base_url}}` has to be changed as per you host:
 
 
-### Taking care of routing
+### Easy two step implementation
 
-Finally, let's take care of the routing. At the app that sends webhooks, you probably configure an URL where you want your webhook requests to be sent. In the routes file of your app, you must pass that route to `Route::webhooks`. Here's an example:
+Finally, let's take care of the routing. At the app that sends webhooks, you probably configure an URL where you want your webhook requests to be sent. Here's an example:
 
 ```php
-Route::webhooks('webhook-receiving-url');
+$goblin = (new GoblinController)->show($request);
+if($goblin){ return $goblin; }
 ```
 
-Behind the scenes, this will register a `POST` route to a controller provided by this package. Because the app that sends webhooks to you has no way of getting a csrf-token, you must add that route to the `except` array of the `VerifyCsrfToken` middleware:
+Response Part, this will register a request to the database by this package. Because the app that sends webhooks to you has no way of getting a token :
 
 ```php
-protected $except = [
-    'webhook-receiving-url',
-];
+$status = "success";
+$message = $response;
+return (new GoblinController)->store($request, $message, $status);
 ```
 
 ## Usage
