@@ -145,7 +145,7 @@ We publish all received postcards [on our company website](https://techuplabs.co
 
 ## Testimonials
 
-If you want to share with us your thoughts on Quora Blocker Request Goblin or showcase what you have built with it (it could be any aspect of our product, not only the React library), you can do it here: <a href="https://www.feedspace.io/u/zn9fdo8">Request Goblin Testimonials Form</a>
+If you want to share with us your thoughts on Request Goblin or showcase what you have built with it (it could be any aspect of our product, not only the React library), you can do it here: <a href="https://www.feedspace.io/u/zn9fdo8" target="_blank">Request Goblin Testimonials Form</a>
 
 ## License
 
